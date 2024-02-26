@@ -1,0 +1,19 @@
+<app-nav></app-nav>
+<div class="wrapper">
+    <app-details></app-details>
+</div>
+<div class="wrapper wrapper-xl">
+	@defer (on timer(5000ms)) {
+		<app-projects  />
+	} @placeholder () {
+		<p style="text-align: center;">Projects will be rendered here...</p>
+	} @loading (after 1s; minimum 3s) {
+        <app-projects-skeleton />
+	} @error {
+		<p>Oops, something went wrong!</p>
+	}
+</div>
+<hr>
+<div class="wrapper">
+    <app-contact></app-contact>
+</div>
